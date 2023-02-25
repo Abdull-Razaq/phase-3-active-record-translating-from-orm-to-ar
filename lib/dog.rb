@@ -6,14 +6,14 @@ ActiveRecord::Base.establish_connection(
     database: "db/test.sqlite3"
 )
 
-sql =  <<-SQL
-    CRREATE TABLE IF NOT EXISTS dogs (
-        id  INTEGER PRIMARY KEY,
-        name TEXT,
-        breed TEXT
-    )
+sql = <<-SQL
+  CREATE TABLE IF NOT EXISTS dogs (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    breed TEXT
+  )
 SQL
-ActiveRecord::Base.connection.execute(sql
+ActiveRecord::Base.connection.execute(sql)
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
